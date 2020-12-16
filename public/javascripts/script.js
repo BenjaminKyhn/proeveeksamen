@@ -1,3 +1,5 @@
+// Den rent-faktiske JSON-fil kan ikke indlæses i frontenden
+
 let json = [
     {
         "id": 100,
