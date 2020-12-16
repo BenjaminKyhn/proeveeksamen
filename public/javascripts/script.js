@@ -107,6 +107,8 @@ function insertData(){
     let divContainer = document.getElementById("table");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
+
+    //TODO: Farven på tabellen skal ændre sig ift. grænseværdier
 }
 
 insertData();
