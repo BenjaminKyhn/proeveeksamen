@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const { getWeatherDataNaestved } = require('../modules/weather');
+var express = require('express');
+var router = express.Router();
+const path = require('path');
 
 router.get('/', function(req, res, next) {
-    res.send(getWeatherDataNaestved());
+    res.sendFile(path.join(__dirname, '../public/html', 'vejr.html'));
 });
 
 module.exports = router;
