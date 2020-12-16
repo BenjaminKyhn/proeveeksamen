@@ -10,13 +10,10 @@ router.get('/', function (req, res, next) {
 /* GET sensordata for the specified sensor ID */
 router.get('/:sensor_id', function (req, res, next) {
     let sensor = req.params.sensor_id;
-    console.log(req.params.sensor_id)
     res.send(json.sensors[sensor]);
 });
 
 router.post('/add-sensor', function (req, res, next) {
-    console.log(req.body)
-
     const newSensor = {
         "id": req.body.id,
         "bygning": req.body.bygning,
