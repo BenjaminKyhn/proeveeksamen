@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const json = require('../sensordata.json');
+const json = require('../persistence/sensordata.json');
 
 /* GET a list of all sensors. */
 router.get('/', function (req, res, next) {
