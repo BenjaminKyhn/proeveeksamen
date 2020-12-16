@@ -78,7 +78,6 @@ router.get('/:sensor_id', function(req, res, next) {
 
 router.post('/add-sensor', function(req, res, next) {
   console.log(req.body)
-  console.log(req.body.id)
 
   const newSensor = {
     "id": req.body.id,
