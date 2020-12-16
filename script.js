@@ -68,22 +68,45 @@ function printData(){
 }
 
 function insertData(){
-    let bygninger = [];
-    let body = document.getElementsByTagName('body')[0];
-
+    // EXTRACT VALUE FOR HTML HEADER.
+    // ('Book ID', 'Book Name', 'Category' and 'Price')
+    let col = [];
     for (let i = 0; i < json.length; i++) {
-        if (!bygninger.includes(json[i].bygning)){
-            bygninger.push(json[i].bygning);
-            let table = document.createElement("table");
-            table.class = "table";
-            let th = document.createElement("thead");
-            let tr = document.createElement("tr");
-            let tdLokaleNr = document.createTextNode("Lokalenr.");
-            tr.appendChild(tdLokaleNr);
-            th.appendChild(tr);
-            table.appendChild(th)
-            body.appendChild(table);
+        for (let key in json[i]) {
+            if (col.indexOf(key) === -1) {
+                col.push(key);
+            }
         }
-
     }
+
+    // CREATE DYNAMIC TABLE.
+    let table = document.createElement("table");
+
+    // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+    let tr = table.insertRow(-1);                   // TABLE ROW.
+
+    for (let i = 0; i < col.length; i++) {
+        let th = document.createElement("th");      // TABLE HEADER.
+        th.innerHTML = col[i];
+        tr.appendChild(th);
+    }
+
+    // ADD JSON DATA TO THE TABLE AS ROWS.
+    for (let i = 0; i < json.length; i++) {
+
+        tr = table.insertRow(-1);
+
+        for (let j = 0; j < col.length; j++) {
+            let tabCell = tr.insertCell(-1);
+            tabCell.innerHTML = json[i][col[j]];
+        }
+    }
+
+    // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+    let divContainer = document.getElementById("table");
+    divContainer.innerHTML = "";
+    divContainer.appendChild(table);
 }
+
+insertData();
