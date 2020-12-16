@@ -69,4 +69,10 @@ router.get('/', function(req, res, next) {
   res.send(json);
 });
 
+/* GET sensordata for the specified sensor ID */
+router.get('/:sensor_id', function(req, res, next) {
+  let sensor = req.params.sensor_id;
+  res.send(json[sensor]);
+});
+
 module.exports = router;
