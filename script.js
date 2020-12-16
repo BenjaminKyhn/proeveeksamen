@@ -67,3 +67,23 @@ function printData(){
     }
 }
 
+function insertData(){
+    let bygninger = [];
+    let body = document.getElementsByTagName('body')[0];
+
+    for (let i = 0; i < json.length; i++) {
+        if (!bygninger.includes(json[i].bygning)){
+            bygninger.push(json[i].bygning);
+            let table = document.createElement("table");
+            table.class = "table";
+            let th = document.createElement("thead");
+            let tr = document.createElement("tr");
+            let tdLokaleNr = document.createTextNode("Lokalenr.");
+            tr.appendChild(tdLokaleNr);
+            th.appendChild(tr);
+            table.appendChild(th)
+            body.appendChild(table);
+        }
+
+    }
+}
