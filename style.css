@@ -16,6 +16,11 @@ td {
     background-color: greenyellow;
 }
 
+tr, th {
+    padding: 10px;
+    text-align: center;
+}
+
 .luftkvalitet {
     background-color: orange;
 }
