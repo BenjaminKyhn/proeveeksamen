@@ -1,0 +1,25 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+h1 {
+    padding-bottom: 40px;
+    text-decoration: underline;
+}
+
+td {
+    background-color: greenyellow;
+}
+
+.luftkvalitet {
+    background-color: orange;
+}
+
+.lydniveau {
+    background-color: red;
+}
